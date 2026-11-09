@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Александр & Екатерина — Свадьба</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;600&family=Montserrat:wght@300;400&display=swap" rel="stylesheet">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      font-family: 'Montserrat', sans-serif;
+      color: #4a4a4a;
+      background: #fdfbf7;
+      overflow-x: hidden;
+    }
+
+    /* ---------- HERO ---------- */
+    .hero {
+      height: 100vh;
+      background: linear-gradient(rgba(253,251,247,0.55), rgba(253,251,247,0.75)),
+                  url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1600&q=80') center/cover no-repeat;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      padding: 20px;
+    }
+    .hero .subtitle {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.3rem;
+      letter-spacing: 6px;
+      text-transform: uppercase;
+      color: #8a7a5c;
+      margin-bottom: 20px;
+      animation: fadeUp 1.2s ease forwards;
+    }
+    .hero h1 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: clamp(3rem, 9vw, 6rem);
+      font-weight: 300;
+      color: #3d3d3d;
+      line-height: 1.1;
+      animation: fadeUp 1.4s ease forwards;
+    }
+    .hero .amp {
+      font-style: italic;
+      color: #b89b5e;
+    }
+    .hero .date {
+      margin-top: 30px;
+      font-size: 1.2rem;
+      letter-spacing: 4px;
+      color: #6b6b6b;
+      animation: fadeUp 1.6s ease forwards;
+    }
+    .hero .divider {
+      width: 1px;
+      height: 60px;
+      background: #b89b5e;
+      margin: 30px 0;
+      animation: fadeUp 1.8s ease forwards;
+    }
+
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(30px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* ---------- SECTIONS ---------- */
+    section { padding: 90px 20px; }
+    .container { max-width: 900px; margin: 0 auto; text-align: center; }
+
+    h2 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2.6rem;
+      font-weight: 400;
+      color: #3d3d3d;
+      margin-bottom: 40px;
+      position: relative;
+    }
+    h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 1px;
+      background: #b89b5e;
+      margin: 18px auto 0;
+    }
+
+    p { line-height: 1.8; font-weight: 300; }
+
+    /* ---------- INVITATION TEXT ---------- */
+    .invite-text {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.5rem;
+      font-style: italic;
+      color: #5a5a5a;
+      max-width: 700px;
+      margin: 0 auto;
+    }
+
+    /* ---------- DETAILS CARDS ---------- */
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 30px;
+      margin-top: 20px;
+    }
+    .card {
+      background: #fff;
+      border: 1px solid #ece5d8;
+      border-radius: 4px;
+      padding: 45px 25px;
+      transition: transform 0.4s ease, box-shadow 0.4s ease;
+    }
+    .card:hover {
+      transform: translateY(-8px);
+      box-shadow: 0 20px 40px rgba(184,155,94,0.15);
+    }
+    .card .icon {
+      font-size: 2rem;
+      color: #b89b5e;
+      margin-bottom: 18px;
+    }
+    .card h3 {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.6rem;
+      font-weight: 500;
+      margin-bottom: 12px;
+      color: #3d3d3d;
+    }
+    .card .time {
+      font-size: 1.4rem;
+      color: #b89b5e;
+      font-weight: 400;
+      margin-bottom: 8px;
+    }
+
+    /* ---------- TIMELINE ---------- */
+    .timeline { max-width: 600px; margin: 0 auto; text-align: left; }
+    .timeline-item {
+      display: flex;
+      gap: 25px;
+      padding: 22px 0;
+      border-bottom: 1px dashed #e3dacb;
+    }
+    .timeline-item:last-child { border-bottom: none; }
+    .timeline-item .t {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: #b89b5e;
+      min-width: 90px;
+    }
+    .timeline-item .desc strong {
+      display: block;
+      font-weight: 500;
+      margin-bottom: 4px;
+      color: #3d3d3d;
+    }
+    .timeline-item .desc span { font-weight: 300; color: #7a7a7a; }
+
+    /* ---------- RSVP ---------- */
+    .rsvp-section {
+      background: #f5efe4;
+    }
+    .rsvp-form {
+      max-width: 520px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .form-group { margin-bottom: 22px; }
+    label {
+      display: block;
+      font-size: 0.85rem;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+      color: #8a7a5c;
+    }
+    input, select, textarea {
+      width: 100%;
+      padding: 14px 16px;
+      border: 1px solid #ddd2bf;
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 1rem;
+      background: #fff;
+      color: #4a4a4a;
+      transition: border-color 0.3s;
+    }
+    input:focus, select:focus, textarea:focus {
+      outline: none;
+      border-color: #b89b5e;
+    }
+    .btn {
+      display: inline-block;
+      width: 100%;
+      padding: 16px;
+      background: #b89b5e;
+      color: #fff;
+      border: none;
+      border-radius: 3px;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.95rem;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      cursor: pointer;
+      transition: background 0.3s, transform 0.2s;
+    }
+    .btn:hover { background: #a3864c; transform: translateY(-2px); }
+
+    .success-msg {
+      display: none;
+      text-align: center;
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 1.4rem;
+      color: #8a7a5c;
+      padding: 20px;
+    }
+
+    /* ---------- FOOTER ---------- */
+    footer {
+      background: #3d3d3d;
+      color: #e8e2d6;
+      text-align: center;
+      padding: 50px 20px;
+    }
+    footer .names {
+      font-family: 'Cormorant Garamond', serif;
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+    footer .amp { color: #b89b5e; font-style: italic; }
+    footer p { font-size: 0.85rem; letter-spacing: 2px; opacity: 0.7; }
+
+    /* ---------- REVEAL ANIMATION ---------- */
+    .reveal {
+      opacity: 0;
+      transform: translateY(40px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
+    }
+    .reveal.visible { opacity: 1; transform: translateY(0); }
+
+    @media (max-width: 600px) {
+      section { padding: 60px 18px; }
+      h2 { font-size: 2.1rem; }
+      .hero .subtitle { font-size: 1rem; letter-spacing: 4px; }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- HERO -->
+  <header class="hero">
+    <div class="subtitle">Мы приглашаем вас</div>
+    <h1>Александр <span class="amp">&</span><br>Екатерина</h1>
+    <div class="divider"></div>
+    <div class="date">14 · СЕНТЯБРЯ · 2025</div>
+  </header>
+
+  <!-- INVITATION -->
+  <section>
+    <div class="container reveal">
+      <p class="invite-text">
+        Дорогие друзья и близкие!<br><br>
+        В этот особенный день мы хотим разделить с вами радость
+        нашего самого важного события — дня создания нашей семьи.
+        Будем счастливы видеть вас на нашем празднике!
+      </p>
+    </div>
+  </section>
+
+  <!-- DETAILS -->
+  <section style="background:#faf6ee;">
+    <div class="container reveal">
+      <h2>Детали торжества</h2>
+      <div class="cards">
+        <div class="card">
+          <div class="icon">📍</div>
+          <h3>Место</h3>
+          <p>Загородный клуб<br>«Лесная усадьба»<br>ул. Сосновая, 12</p>
+        </div>
+        <div class="card">
+          <div class="icon">🕒</div>
+          <h3>Время</h3>
+          <div class="time">15:00</div>
+          <p>Сбор гостей<br>с 14:30</p>
+        </div>
+        <div class="card">
+          <div class="icon">👗</div>
+          <h3>Дресс-код</h3>
+          <p>Пастельные тона<br>и элегантные образы.<br>Просим избегать белого.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- TIMELINE -->
+  <section>
+    <div class="container reveal">
+      <h2>Программа дня</h2>
+      <div class="timeline">
+        <div class="timeline-item">
+          <div class="t">14:30</div>
+          <div class="desc"><strong>Сбор гостей</strong><span>Добро пожаловать!</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="t">15:00</div>
+          <div class="desc"><strong>Церемония</strong><span>Торжественная регистрация</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="t">16:00</div>
+          <div class="desc"><strong>Фуршет</strong><span>Поздравления и фотосессия</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="t">18:00</div>
+          <div class="desc"><strong>Банкет</strong><span>Ужин, танцы и веселье</span></div>
+        </div>
+        <div class="timeline-item">
+          <div class="t">23:00</div>
+          <div class="desc"><strong>Финал</strong><span>Салют и тёплые объятия</span></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RSVP -->
+  <section class="rsvp-section">
+    <div class="container reveal">
+      <h2>Подтвердите присутствие</h2>
+      <p style="margin-bottom:35px;">Пожалуйста, ответьте до 1 сентября 2025 года</p>
+      <form class="rsvp-form" id="rsvpForm">
+        <div class="form-group">
+          <label for="name">Ваше имя и фамилия</label>
+          <input type="text" id="name" placeholder="Иван Иванов" required>
+        </div>
+        <div class="form-group">
+          <label for="attend">Сможете ли вы присутствовать?</label>
+          <select id="attend" required>
+            <option value="">Выберите вариант</option>
+            <option value="yes">Да, обязательно буду</option>
+            <option value="no">К сожалению, не смогу</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="guests">Сколько вас будет?</label>
+          <select id="guests">
+            <option value="1">Один человек</option>
+            <option value="2">Пара</option>
+            <option value="3">С ребёнком</option>
+          </select>
+        </div>
+        <div class="form-group">
+          <label for="wishes">Пожелания / аллергии</label>
+          <textarea id="wishes" rows="3" placeholder="Напишите здесь..."></textarea>
+        </div>
+        <button type="submit" class="btn">Отправить ответ</button>
+      </form>
+      <div class="success-msg" id="successMsg">
+        Спасибо! Мы получили ваш ответ 🤍
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div class="names">Александр <span class="amp">&</span> Екатерина</div>
+    <p>14 · 09 · 2025</p>
+  </footer>
+
+  <script>
+    // Плавное появление секций при скролле
+    const reveals = document.querySelectorAll('.reveal');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          io.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.15 });
+    reveals.forEach(el => io.observe(el));
+
+    // Обработка формы RSVP
+    const form = document.getElementById('rsvpForm');
+    const successMsg = document.getElementById('successMsg');
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      form.style.display = 'none';
+      successMsg.style.display = 'block';
+      // Здесь можно отправить данные на сервер / Google Forms / Telegram API
+    });
+  </script>
+</body>
+</html>
